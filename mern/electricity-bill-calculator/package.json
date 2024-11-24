@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electricity-bill-calculator": "file:",
     "express": "^4.21.1"
   }
 }
