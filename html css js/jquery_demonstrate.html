@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy List Items</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Copy List Items</h2>
+
+    <label for="sourceList">Source List:</label>
+    <select id="sourceList">
+        <option value="Item 1">Item 1</option>
+        <option value="Item 2">Item 2</option>
+        <option value="Item 3">Item 3</option>
+    </select>
+
+    <button id="copyButton">Copy to Another List</button>
+
+    <br><br>
+
+    <label for="destinationList">Destination List:</label>
+    <select id="destinationList">
+        <!-- New items will be copied here -->
+    </select>
+
+    <script>
+        $(document).ready(function() {
+            // When the copy button is clicked, copy the selected item from the source list to the destination list
+            $('#copyButton').click(function() {
+                var selectedItem = $('#sourceList option:selected').val(); // Get selected item
+                if (selectedItem) {
+                    $('#destinationList').append('<option>' + selectedItem + '</option>'); // Add to destination list
+                }
+            });
+        });
+    </script>
+</body>
+</html>
