@@ -3,39 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy List Items</title>
+    <title>jQuery Demonstration</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
-    <h2>Copy List Items</h2>
+    <h2>Copy List Items and Create New Element</h2>
 
+    <!-- Section for Copying List Items -->
+    <h3>Copy List Items</h3>
     <label for="sourceList">Source List:</label>
     <select id="sourceList">
         <option value="Item 1">Item 1</option>
         <option value="Item 2">Item 2</option>
         <option value="Item 3">Item 3</option>
     </select>
-
     <button id="copyButton">Copy to Another List</button>
-
+    
     <br><br>
 
     <label for="destinationList">Destination List:</label>
     <select id="destinationList">
-        <!-- New items will be copied here -->
+        <!-- Copied items will appear here -->
     </select>
+
+    <br><br><br>
+
+    <!-- Section for Creating New Element -->
+    <h3>Create New Element</h3>
+    <button id="createButton">Create New Paragraph</button>
+
+    <div id="container">
+        <!-- New paragraphs will be added here -->
+    </div>
 
     <script>
         $(document).ready(function() {
             // When the copy button is clicked, copy the selected item from the source list to the destination list
             $('#copyButton').click(function() {
-                var selectedItem = $('#sourceList option:selected').val(); // Get selected item
+                var selectedItem = $('#sourceList option:selected').val(); // Get selected item from source list
                 if (selectedItem) {
                     $('#destinationList').append('<option>' + selectedItem + '</option>'); // Add to destination list
                 }
             });
+
+            // When the create button is clicked, create a new paragraph and append it to the container
+            $('#createButton').click(function() {
+                var newParagraph = $('<p>This is a new paragraph added dynamically.</p>');
+                $('#container').append(newParagraph); // Append the new paragraph to the container
+            });
         });
     </script>
+
 </body>
 </html>
