@@ -1,0 +1,43 @@
+CREATE DATABASE online_shopping;
+
+USE online_shopping;
+
+-- Users table (for farmers and customers)
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255),
+    role ENUM('customer', 'farmer') DEFAULT 'customer'
+);
+
+-- Products table (for farmers to add products)
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    farmer_id INT,
+    product_name VARCHAR(100),
+    description TEXT,
+    price DECIMAL(10, 2),
+    quantity INT,
+    FOREIGN KEY (farmer_id) REFERENCES users(user_id)
+);
+
+-- Orders table (for customers to place orders)
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    total_price DECIMAL(10, 2),
+    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES users(user_id)
+);
+
+-- Order items table (products in the order)
+CREATE TABLE order_items (
+    order_item_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    price DECIMAL(10, 2),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
