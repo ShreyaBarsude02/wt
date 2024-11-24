@@ -1,0 +1,17 @@
+CREATE DATABASE vit_results;
+
+USE vit_results;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    reg_no VARCHAR(20) UNIQUE,
+    subject1_mse FLOAT,
+    subject1_ese FLOAT,
+    subject2_mse FLOAT,
+    subject2_ese FLOAT,
+    subject3_mse FLOAT,
+    subject3_ese FLOAT,
+    subject4_mse FLOAT,
+    subject4_ese FLOAT
+);
