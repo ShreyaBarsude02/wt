@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.5); 
+        }
+
+        header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 20px;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* Main Content Container */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            padding-top: 120px; /* Space for header */
+            margin-top: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #f39c12;
+        }
+
+        .sidebar p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .sidebar strong {
+            font-weight: bold;
+        }
+
+        /* Main Content Section */
+        .main {
+            width: 70%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .main h2 {
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .main ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar,
+            .main {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .sidebar h2,
+            .main h2 {
+                font-size: 1.5rem;
+            }
+
+            .sidebar p,
+            .main ul li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .sidebar h2,
+            .main h2 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar p,
+            .main ul li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop class="video-background">
+        <source src="your-video-file.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>John Doe</h1>
+        <p>Web Developer | Software Engineer</p>
+    </header>
+
+    <div class="content">
+        <div class="sidebar">
+            <h2>Personal Information</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Location:</strong> City, Country</p>
+        </div>
+
+        <div class="main">
+            <h2>Experience</h2>
+            <ul>
+                <li>Software Developer at Company A (2021-Present)</li>
+                <li>Web Developer at Company B (2018-2021)</li>
+            </ul>
+
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor's in Computer Science, University X (2015-2018)</li>
+            </ul>
+
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Node.js, Express.js</li>
+                <li>React, Angular</li>
+                <li>Python, Django</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>John Doe</p>
+    </footer>
+
+</body>
+</html>
